@@ -101,7 +101,8 @@ public class Notification {
     private List<String> includeExternalUserIds;
 
 
-
+  @JsonProperty("channel_for_external_user_ids")
+    private String channelForExternalUserIds;
     // COMMON PARAMETERS
     //
     // The following are parameters in Create Notifications common to all methods of targeting users.
@@ -740,7 +741,12 @@ public class Notification {
     public void setIncludeExternalUserIds(List<String> externalUserIds) {
         this.includeExternalUserIds = externalUserIds;
     }
-
+    public void setChannelForExternalUserIds(String channelForExternalUserIds) {
+        this.channelForExternalUserIds = channelForExternalUserIds;
+    }
+    public String getChannelForExternalUserIds(){
+        return channelForExternalUserIds;
+    }
     public String getAppId() {
         return appId;
     }
