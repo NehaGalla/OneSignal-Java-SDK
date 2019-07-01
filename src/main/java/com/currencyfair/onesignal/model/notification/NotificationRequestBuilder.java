@@ -36,6 +36,7 @@ public final class NotificationRequestBuilder {
     private List<Filter> filters = new ArrayList<>();
     private List<String> includePlayerIds = new ArrayList<>();
     private List<String> includeExternalUserIds = new ArrayList<>();
+    private String channelForExternalUserIds;
     private String appId;
     private List<String> appIds;
     private Map<String, String> contents = new HashMap<>();
@@ -182,7 +183,10 @@ public final class NotificationRequestBuilder {
         }
         return this;
     }
-
+    public NotificationRequestBuilder withChannelForExternalUserIds(String channelForExternalUserIds) {
+        this.channelForExternalUserIds = channelForExternalUserIds;
+        return this;
+    }
     public NotificationRequestBuilder withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -529,6 +533,7 @@ public final class NotificationRequestBuilder {
         notificationRequest.setFilters(filters);
         notificationRequest.setIncludePlayerIds(includePlayerIds);
         notificationRequest.setIncludeExternalUserIds(includeExternalUserIds);
+        notificationRequest.setChannelForExternalUserIds(channelForExternalUserIds);
         notificationRequest.setAppId(appId);
         notificationRequest.setAppIds(appIds);
         notificationRequest.setContents(contents);
